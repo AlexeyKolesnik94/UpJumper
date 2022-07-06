@@ -32,10 +32,10 @@ namespace Platforms
         {
             Vector3 spawnPosition = new Vector3();
             
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             {
                 spawnPosition.x = Random.Range(_min.x, _max.x);
-                spawnPosition.y += Random.Range(0.23f, 0.8f);
+                spawnPosition.y += Random.Range(0.2f, 0.6f);
 
                 if (Random.value < _chanceStaticSpawn)
                 {

@@ -9,13 +9,17 @@ namespace Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private float jumpForce;
+        [SerializeField] private float speed;
 
         private Rigidbody2D _rb;
         private Animator _animator;
 
+        private Vector3 _acceleration;
+
         private readonly CompositeDisposable _disposable = new CompositeDisposable();
 
         private static readonly int Jump = Animator.StringToHash("Jump");
+       
 
         private void Awake()
         {
@@ -39,6 +43,11 @@ namespace Player
                 }).AddTo(_disposable);
         }
 
+        private void FixedUpdate()
+        {
+            Moving();
+        }
+
         private void OnDisable()
         {
             _disposable.Dispose();
@@ -48,6 +57,12 @@ namespace Player
         {
             _rb.velocity = Vector2.up * jumpForce;
             _animator.SetBool(Jump, true);
+        }
+
+        private void Moving()
+        {
+            _acceleration = Input.acceleration;
+            _rb.velocity = new Vector3(_acceleration.x * speed, _rb.velocity.y, 0f);
         }
     }
 }
