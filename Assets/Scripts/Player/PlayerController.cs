@@ -27,7 +27,8 @@ namespace Player
             this.OnCollisionEnter2DAsObservable()
                 .Subscribe(col =>
                 {
-                    if (col.collider.GetComponent<GroundCheck>()) Jumping();
+                    // if (col.collider.GetComponent<GroundCheck>()) Jumping();
+                    if (col.relativeVelocity.y > 0) Jumping(); 
                 }).AddTo(_disposable);
         }
 

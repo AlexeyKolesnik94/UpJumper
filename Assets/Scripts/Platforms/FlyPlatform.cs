@@ -36,11 +36,14 @@ namespace Platforms
         {
             if (_isMovingRight)
             {
-                transform.position = new Vector2(transform.position.x + speed * Time.deltaTime, transform.position.y);
+                transform.position = new Vector2(transform.position.x + speed * Time.deltaTime,
+                    transform.position.y);
             } 
+            
             if (!_isMovingRight)
             {
-                transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
+                transform.position = new Vector2(transform.position.x - speed * Time.deltaTime,
+                    transform.position.y);
             }
             
             
