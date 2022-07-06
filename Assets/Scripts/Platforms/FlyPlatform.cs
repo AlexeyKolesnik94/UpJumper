@@ -1,18 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-public class FlyPlatform : MonoBehaviour
+namespace Platforms
 {
-    // Start is called before the first frame update
-    void Start()
+    public class FlyPlatform : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private float speed;
 
-    // Update is called once per frame
-    void Update()
-    {
+        private Vector3 _min;
+        private Vector3 _max;
+
+        private bool _isMovingRight;
         
+        private void Update()
+        {
+
+            if (transform.position.x > _max.x)
+            {
+                _isMovingRight = false;
+            }
+
+            if (transform.position.x < _min.x)
+            {
+                _isMovingRight = true;
+            }
+
+            Debug.Log(_isMovingRight);
+            MovingPlatform();
+        }
+
+        private void Start()
+        {
+            _min = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));   
+            _max = Camera.main.ViewportToWorldPoint(new Vector3(1f, 1f, Camera.main.nearClipPlane));
+
+            _isMovingRight = true;
+        }
+
+
+        private void MovingPlatform()
+        {
+            
+            if (_isMovingRight)
+            {
+                transform.position = new Vector2(transform.position.x + speed * Time.deltaTime, transform.position.y);
+            } 
+            if (!_isMovingRight)
+            {
+                transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
+            }
+            
+            
+        }
     }
 }
