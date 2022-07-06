@@ -32,14 +32,15 @@ namespace Player
             this.OnCollisionEnter2DAsObservable()
                 .Subscribe(col =>
                 {
-                    if (col.relativeVelocity.y > 0)
+                    if (!(col.relativeVelocity.y > 0)) return;
+                    if (col.collider.GetComponent<FallingPlatform>())
                     {
-                        Jumping();
-                        if (col.collider.GetComponent<FallingPlatform>())
-                        {
-                            Destroy(col.gameObject);
-                        }
-                    } 
+                        Destroy(col.gameObject);
+                        Jumping(jumpForce / 2);
+                    } else
+                    {
+                        Jumping(jumpForce);
+                    }
                 }).AddTo(_disposable);
         }
 
@@ -53,9 +54,9 @@ namespace Player
             _disposable.Dispose();
         }
 
-        private void Jumping()
+        private void Jumping(float force)
         {
-            _rb.velocity = Vector2.up * jumpForce;
+            _rb.velocity = Vector2.up * force;
             _animator.SetBool(Jump, true);
         }
 
