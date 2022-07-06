@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 538347325}
   - component: {fileID: 538347329}
   - component: {fileID: 538347328}
+  - component: {fileID: 538347330}
   m_Layer: 0
   m_Name: FallingPlatform
   m_TagString: Untagged
@@ -307,7 +308,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538347324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.371, z: 0}
+  m_LocalPosition: {x: 0, y: -1.538, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -359,6 +360,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.024690092}
   m_EdgeRadius: 0
+--- !u!114 &538347330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538347324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e69eb84b28041548482f11adfe6644, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1176020538
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,6 +385,8 @@ GameObject:
   - component: {fileID: 1176020539}
   - component: {fileID: 1176020543}
   - component: {fileID: 1176020542}
+  - component: {fileID: 1176020544}
+  - component: {fileID: 1176020545}
   m_Layer: 0
   m_Name: FlyPlatform
   m_TagString: Untagged
@@ -511,6 +526,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.027611956}
   m_EdgeRadius: 0
+--- !u!114 &1176020544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176020538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed013a81c4ce942658efed96d6f2ac7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1176020545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176020538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c119af88b33f48eea9c3d7cc59bdcdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1214155674
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +563,7 @@ GameObject:
   - component: {fileID: 1214155675}
   - component: {fileID: 1214155679}
   - component: {fileID: 1214155678}
+  - component: {fileID: 1214155680}
   m_Layer: 0
   m_Name: StaticPlatform
   m_TagString: Untagged
@@ -611,7 +651,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214155674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.771, z: 0}
+  m_LocalPosition: {x: 0, y: 0.39, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -663,6 +703,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.029328376}
   m_EdgeRadius: 0
+--- !u!114 &1214155680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214155674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed013a81c4ce942658efed96d6f2ac7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1326623822
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +728,7 @@ GameObject:
   - component: {fileID: 1326623826}
   - component: {fileID: 1326623825}
   - component: {fileID: 1326623827}
+  - component: {fileID: 1326623828}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -743,7 +796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326623822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.153, z: 0}
+  m_LocalPosition: {x: 0, y: 1.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -817,3 +870,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1326623828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326623822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe96bef0395a4f489525aad03fe6d02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 5
