@@ -30,8 +30,8 @@ namespace Platforms
 
             _isMovingRight = true;
         }
-
-
+        
+        
         private void MovingPlatform()
         {
             if (_isMovingRight)

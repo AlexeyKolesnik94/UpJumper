@@ -6,10 +6,19 @@ namespace Platforms
 {
     public class SpawnPlatform : MonoBehaviour
     {
-        [SerializeField] private GameObject[] platformsPrefabs;
+        [Header("Platform Prefabs")]
+        [SerializeField] private GameObject staticPlatform;
+        [SerializeField] private GameObject flyPlatform;
+        [SerializeField] private GameObject fallingPlatform;
+        [SerializeField] private GameObject finishPlatform;
+        
 
         private Vector3 _min;
         private Vector3 _max;
+
+        private float _chanceStaticSpawn = 0.5f;
+        private float _chanceFlySpawn = 0.3f;
+        private float _chanceFallingSpawn = 0.1f;
         
         private void Start()
         {
@@ -26,12 +35,26 @@ namespace Platforms
             for (int i = 0; i < 10; i++)
             {
                 spawnPosition.x = Random.Range(_min.x, _max.x);
-                spawnPosition.y += Random.Range(0.6f, 1.2f);
+                spawnPosition.y += Random.Range(0.23f, 0.8f);
 
-                int rand = Random.Range(0, platformsPrefabs.Length);
-
-                Instantiate(platformsPrefabs[rand], spawnPosition, Quaternion.identity);
+                if (Random.value < _chanceStaticSpawn)
+                {
+                    Instantiate(staticPlatform, spawnPosition, Quaternion.identity);
+                } else
+                {
+                    if (Random.value < _chanceStaticSpawn)
+                    {
+                        Instantiate(flyPlatform, spawnPosition, Quaternion.identity);
+                    } else
+                    {
+                        Instantiate(fallingPlatform, spawnPosition, Quaternion.identity);
+                    }
+                }
             }
+            spawnPosition.x = Random.Range(_min.x, _max.x);
+            spawnPosition.y += Random.Range(0.23f, 0.8f);
+
+            Instantiate(finishPlatform, spawnPosition, Quaternion.identity);
         }
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using Platforms;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
@@ -27,8 +28,14 @@ namespace Player
             this.OnCollisionEnter2DAsObservable()
                 .Subscribe(col =>
                 {
-                    // if (col.collider.GetComponent<GroundCheck>()) Jumping();
-                    if (col.relativeVelocity.y > 0) Jumping(); 
+                    if (col.relativeVelocity.y > 0)
+                    {
+                        Jumping();
+                        if (col.collider.GetComponent<FallingPlatform>())
+                        {
+                            Destroy(col.gameObject);
+                        }
+                    } 
                 }).AddTo(_disposable);
         }
 

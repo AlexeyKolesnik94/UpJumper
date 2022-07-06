@@ -167,10 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36f224d7ccfe84670a6e84bcd58e0eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformsPrefabs:
-  - {fileID: 1059542731550801262, guid: 990d768007f254fea86a548c74c62000, type: 3}
-  - {fileID: 1513049460922520134, guid: 65cbe37f63cfd4fd58551860eea28166, type: 3}
-  - {fileID: 8774505882982243786, guid: 1f053cb68bb2c4ec7a06beab404cf867, type: 3}
+  staticPlatform: {fileID: 8774505882982243786, guid: 1f053cb68bb2c4ec7a06beab404cf867, type: 3}
+  flyPlatform: {fileID: 1513049460922520134, guid: 65cbe37f63cfd4fd58551860eea28166, type: 3}
+  fallingPlatform: {fileID: 1059542731550801262, guid: 990d768007f254fea86a548c74c62000, type: 3}
+  finishPlatform: {fileID: 7317930141111224098, guid: 25a1d27ec81e04080a61e5af5d12f541, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
