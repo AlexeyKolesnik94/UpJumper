@@ -1,18 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Player;
+using UniRx;
+using UniRx.Triggers;
 using UnityEngine;
 
-public class FallingPlatform : MonoBehaviour
+namespace Platforms
 {
-    // Start is called before the first frame update
-    void Start()
+    public class FallingPlatform : MonoBehaviour
     {
-        
-    }
+        private Rigidbody2D _rb;
 
-    // Update is called once per frame
-    void Update()
-    {
+        private readonly CompositeDisposable _disposable = new CompositeDisposable();
         
+        private void Start()
+        {
+            _rb = GetComponent<Rigidbody2D>();
+            
+            this.OnCollisionEnter2DAsObservable()
+                .Subscribe(col =>
+                {
+                    if (col.collider.GetComponent<PlayerController>())
+                    {
+                        _rb.bodyType = RigidbodyType2D.Dynamic;
+                    }
+                }).AddTo(_disposable);
+        }
+
+        private void OnDisable()
+        {
+            _disposable.Dispose();
+        }
     }
 }

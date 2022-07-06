@@ -16,17 +16,10 @@ namespace Platforms
         private void Update()
         {
 
-            if (transform.position.x > _max.x)
-            {
-                _isMovingRight = false;
-            }
+            if (transform.position.x > _max.x) _isMovingRight = false;
 
-            if (transform.position.x < _min.x)
-            {
-                _isMovingRight = true;
-            }
-
-            Debug.Log(_isMovingRight);
+            if (transform.position.x < _min.x) _isMovingRight = true;
+            
             MovingPlatform();
         }
 
@@ -41,7 +34,6 @@ namespace Platforms
 
         private void MovingPlatform()
         {
-            
             if (_isMovingRight)
             {
                 transform.position = new Vector2(transform.position.x + speed * Time.deltaTime, transform.position.y);
