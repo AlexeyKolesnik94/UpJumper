@@ -2,7 +2,7 @@ using UnityEngine.Events;
 
 namespace UI
 {
-    public class UIEvents
+    public static class UIEvents
     {
         public static readonly UnityEvent OnMenuBtnClick = new UnityEvent();
         public static readonly UnityEvent OnRestartBtnClick = new UnityEvent();
@@ -10,7 +10,9 @@ namespace UI
         
         public static readonly UnityEvent OnPauseBtnClick = new UnityEvent();
         
-        
+        public static readonly UnityEvent OnStartBtnClick = new UnityEvent();
+
+
 
         public static void SendMenuBtnClick()
         {
@@ -30,6 +32,11 @@ namespace UI
         public static void SendPauseBtnClick()
         {
             OnPauseBtnClick.Invoke();
+        }
+        
+        public static void SendStartBtnClick()
+        {
+            OnStartBtnClick.Invoke();
         }
     }
 }

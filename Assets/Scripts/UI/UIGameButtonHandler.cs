@@ -1,15 +1,11 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace UI
 {
-    public class UIButtonHandler : MonoBehaviour
+    public class UIGameButtonHandler : MonoBehaviour
     {
         [SerializeField] private Canvas pauseCanvas;
-        
         
         private void Start()
         {
