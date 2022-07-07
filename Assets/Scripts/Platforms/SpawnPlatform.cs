@@ -11,7 +11,9 @@ namespace Platforms
         [SerializeField] private GameObject flyPlatform;
         [SerializeField] private GameObject fallingPlatform;
         [SerializeField] private GameObject finishPlatform;
-        
+
+        [Header("Platform Count")]
+        [SerializeField] private int platformCount;
 
         private Vector3 _min;
         private Vector3 _max;
@@ -30,7 +32,7 @@ namespace Platforms
         {
             Vector3 spawnPosition = new Vector3();
             
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < platformCount; i++)
             {
                 spawnPosition.x = Random.Range(_min.x, _max.x);
                 spawnPosition.y += Random.Range(0.2f, 0.6f);
