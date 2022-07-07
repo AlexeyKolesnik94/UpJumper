@@ -12,11 +12,9 @@ namespace Platforms
             this.OnTriggerEnter2DAsObservable()
                 .Subscribe(col =>
                 {
-                    if (col.GetComponent<PlayerController>())
-                    {
-                        col.gameObject.SetActive(false);
-                        FinishEvent.SendFinishing();
-                    }
+                    if (!col.GetComponent<PlayerController>()) return;
+                    col.gameObject.SetActive(false);
+                    FinishEvent.SendFinishing();
                 }).AddTo(this);
         }
     }

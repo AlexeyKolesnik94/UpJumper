@@ -1,4 +1,3 @@
-using System;
 using Platforms;
 using UniRx;
 using UniRx.Triggers;
@@ -72,13 +71,15 @@ namespace Player
 
         private void BtnMoving()
         {
+            float axis = Input.GetAxis("Horizontal");
+
             if (Input.GetKey(KeyCode.A))
             {
-                _rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, _rb.velocity.y, 0f);
+                _rb.velocity = new Vector3(axis * speed, _rb.velocity.y, 0f);
             }
             if (Input.GetKey(KeyCode.D))
             {
-                _rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, _rb.velocity.y, 0f);
+                _rb.velocity = new Vector3(axis * speed, _rb.velocity.y, 0f);
             }
         }
     }

@@ -1,10 +1,11 @@
+using UI.Events;
 using UnityEngine;
 
 namespace UI.BackInMenu
 {
     public class MenuBtnScript : ButtonSender
     {
-        public override void BtnSender()
+        protected override void BtnSender()
         {
             UIEvents.SendMenuBtnClick();
             

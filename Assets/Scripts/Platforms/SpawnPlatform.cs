@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -42,13 +41,8 @@ namespace Platforms
                     Instantiate(staticPlatform, spawnPosition, Quaternion.identity);
                 } else
                 {
-                    if (Random.value < _chanceStaticSpawn)
-                    {
-                        Instantiate(flyPlatform, spawnPosition, Quaternion.identity);
-                    } else
-                    {
-                        Instantiate(fallingPlatform, spawnPosition, Quaternion.identity);
-                    }
+                    Instantiate(Random.value < _chanceStaticSpawn ? flyPlatform : fallingPlatform, spawnPosition,
+                        Quaternion.identity);
                 }
             }
             spawnPosition.x = Random.Range(_min.x, _max.x);

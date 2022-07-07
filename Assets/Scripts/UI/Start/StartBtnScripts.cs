@@ -1,8 +1,10 @@
+using UI.Events;
+
 namespace UI.Start
 {
     public class StartBtnScripts : ButtonSender
     {
-        public override void BtnSender()
+        protected override void BtnSender()
         {
             UIEvents.SendStartBtnClick();
         }

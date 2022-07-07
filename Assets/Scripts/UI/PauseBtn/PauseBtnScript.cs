@@ -1,10 +1,11 @@
+using UI.Events;
 using UnityEngine;
 
 namespace UI.PauseBtn
 {
     public class PauseBtnScript : ButtonSender
     {
-        public override void BtnSender()
+        protected override void BtnSender()
         {
             UIEvents.SendPauseBtnClick();
         }

@@ -1,6 +1,6 @@
 using UnityEngine.Events;
 
-namespace UI
+namespace UI.Events
 {
     public static class UIEvents
     {

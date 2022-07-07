@@ -1,7 +1,7 @@
 using Platforms;
 using UnityEngine;
 
-namespace UI
+namespace UI.UIHandlers
 {
     public class FinishUIHandler : MonoBehaviour
     {

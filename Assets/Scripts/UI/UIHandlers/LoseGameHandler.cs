@@ -1,7 +1,7 @@
 using SupportScripts;
 using UnityEngine;
 
-namespace UI
+namespace UI.UIHandlers
 {
     public class LoseGameHandler : MonoBehaviour
     {

@@ -9,7 +9,6 @@ namespace Teleports
     {
         private CompositeDisposable _disposable = new CompositeDisposable();
 
-        
         private Vector3 _max;
         private Vector3 _min;
 
@@ -28,9 +27,7 @@ namespace Teleports
                     PlayerController player = col.GetComponent<PlayerController>();
                     
                     if (player)
-                    {
                         player.transform.position = new Vector2(_min.x + 0.05f, player.transform.position.y);
-                    }
                 }).AddTo(_disposable);
         }
 

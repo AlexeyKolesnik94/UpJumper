@@ -1,8 +1,3 @@
-using System;
-using System.Net.Mime;
-using TMPro;
-using UniRx;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 

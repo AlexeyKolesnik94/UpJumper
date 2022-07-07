@@ -2,7 +2,7 @@ using UnityEngine.Events;
 
 namespace Platforms
 {
-    public class FinishEvent
+    public static class FinishEvent
     {
         public static readonly UnityEvent OnFinishing = new UnityEvent();
 

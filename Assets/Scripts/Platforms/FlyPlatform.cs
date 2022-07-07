@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Platforms
 {
@@ -15,7 +13,6 @@ namespace Platforms
         
         private void Update()
         {
-
             if (transform.position.x > _max.x) _isMovingRight = false;
 
             if (transform.position.x < _min.x) _isMovingRight = true;
@@ -45,8 +42,6 @@ namespace Platforms
                 transform.position = new Vector2(transform.position.x - speed * Time.deltaTime,
                     transform.position.y);
             }
-            
-            
         }
     }
 }

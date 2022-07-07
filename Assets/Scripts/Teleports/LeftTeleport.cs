@@ -11,6 +11,7 @@ namespace Teleports
         
         private Vector3 _min;
         private Vector3 _max;
+        
         private void Awake()
         {
             _min = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));
@@ -26,10 +27,7 @@ namespace Teleports
                     PlayerController player = col.GetComponent<PlayerController>();
                     
                     if (player)
-                    {
                         player.transform.position = new Vector2(_max.x - 0.05f, player.transform.position.y);
-                    }
-                    
                 }).AddTo(_disposable);
         }
         

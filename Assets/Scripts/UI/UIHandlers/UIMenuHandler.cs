@@ -1,7 +1,8 @@
+using UI.Events;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace UI
+namespace UI.UIHandlers
 {
     public class UIMenuHandler : MonoBehaviour
     {

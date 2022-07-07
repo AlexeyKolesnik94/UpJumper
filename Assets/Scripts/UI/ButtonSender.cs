@@ -13,6 +13,6 @@ namespace UI
             _button.onClick.AddListener(BtnSender);
         }
 
-        public abstract void BtnSender();
+        protected abstract void BtnSender();
     }
 }
