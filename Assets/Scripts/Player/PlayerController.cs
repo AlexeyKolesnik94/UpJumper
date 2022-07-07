@@ -13,6 +13,7 @@ namespace Player
 
         private Rigidbody2D _rb;
         private Animator _animator;
+        private AudioSource _audio;
 
         private Vector3 _acceleration;
 
@@ -25,6 +26,7 @@ namespace Player
         {
             _rb = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+            _audio = GetComponent<AudioSource>();
         }
 
         private void Start()
@@ -36,7 +38,7 @@ namespace Player
                     if (col.collider.GetComponent<FallingPlatform>())
                     {
                         Destroy(col.gameObject);
-                        Jumping(jumpForce / 2);
+                        Jumping(jumpForce / 1.2f);
                     } else
                     {
                         Jumping(jumpForce);
@@ -59,6 +61,7 @@ namespace Player
         {
             _rb.velocity = Vector2.up * force;
             _animator.SetBool(Jump, true);
+            _audio.Play();
         }
 
         private void Moving()
