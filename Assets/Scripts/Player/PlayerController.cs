@@ -47,6 +47,7 @@ namespace Player
         private void FixedUpdate()
         {
             Moving();
+            BtnMoving();
         }
 
         private void OnDisable()
@@ -64,6 +65,18 @@ namespace Player
         {
             _acceleration = Input.acceleration;
             _rb.velocity = new Vector3(_acceleration.x * speed, _rb.velocity.y, 0f);
+        }
+
+        private void BtnMoving()
+        {
+            if (Input.GetKey(KeyCode.A))
+            {
+                _rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, _rb.velocity.y, 0f);
+            }
+            if (Input.GetKey(KeyCode.D))
+            {
+                _rb.velocity = new Vector3(Input.GetAxis("Horizontal") * speed, _rb.velocity.y, 0f);
+            }
         }
     }
 }

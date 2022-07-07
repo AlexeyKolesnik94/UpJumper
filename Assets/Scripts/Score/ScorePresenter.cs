@@ -22,6 +22,7 @@ namespace Score
             _score.GameScore.Subscribe(_ =>
             {
                 scoreView.RenderCount(_score.GameScore.Value);
+                
             }).AddTo(this);
         }
     }
