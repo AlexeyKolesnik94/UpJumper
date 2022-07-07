@@ -17,9 +17,7 @@ namespace Platforms
         private Vector3 _max;
 
         private float _chanceStaticSpawn = 0.5f;
-        private float _chanceFlySpawn = 0.3f;
-        private float _chanceFallingSpawn = 0.1f;
-        
+
         private void Start()
         {
             _min = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));   

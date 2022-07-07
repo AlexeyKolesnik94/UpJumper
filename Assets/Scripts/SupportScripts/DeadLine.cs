@@ -1,3 +1,4 @@
+using Player;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
@@ -8,10 +9,15 @@ namespace SupportScripts
     {
         private void Start()
         {
-            this.OnCollisionEnter2DAsObservable()
+            this.OnTriggerEnter2DAsObservable()
                 .Subscribe(col =>
                 {
-                    col.collider.gameObject.SetActive(false);
+                    col.gameObject.SetActive(false);
+
+                    if (col.GetComponent<PlayerController>())
+                    {
+                        LoseEvent.SendLoseGame();
+                    }
                 }).AddTo(this);
         }
     }

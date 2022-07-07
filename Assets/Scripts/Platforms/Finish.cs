@@ -2,7 +2,6 @@ using Player;
 using UniRx;
 using UniRx.Triggers;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Platforms
 {
@@ -15,7 +14,8 @@ namespace Platforms
                 {
                     if (col.GetComponent<PlayerController>())
                     {
-                        SceneManager.LoadScene("SampleScene");
+                        col.gameObject.SetActive(false);
+                        FinishEvent.SendFinishing();
                     }
                 }).AddTo(this);
         }
