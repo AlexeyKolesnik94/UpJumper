@@ -8,6 +8,7 @@ namespace UI.UIHandlers
     {
         [SerializeField] private Canvas pauseCanvas;
         
+        
         private void Start()
         {
             UIEvents.OnMenuBtnClick.AddListener(MenuBtnHandler);
@@ -19,13 +20,13 @@ namespace UI.UIHandlers
 
         private void MenuBtnHandler()
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadSceneAsync("Loader");
             Time.timeScale = 1;
         }
         
         private void RestartBtnHandler()
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadSceneAsync("Game");
             Time.timeScale = 1;
         }
         
@@ -40,5 +41,17 @@ namespace UI.UIHandlers
             pauseCanvas.gameObject.SetActive(true);
             Time.timeScale = 0;
         }
+
+        
+        
+        private void OnDisable()
+        {
+            UIEvents.OnMenuBtnClick.RemoveListener(MenuBtnHandler);
+            UIEvents.OnRestartBtnClick.RemoveListener(RestartBtnHandler);
+            UIEvents.OnResumeBtnClick.RemoveListener(ResumeBtnHandler);
+            
+            UIEvents.OnPauseBtnClick.RemoveListener(PauseBtnHandler);
+        }
+
     }
 }

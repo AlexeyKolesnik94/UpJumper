@@ -14,15 +14,21 @@ namespace Platforms
         [Header("Platform Count")]
         [SerializeField] private int platformCount;
 
+        [Header("Platform Range")]
+        [SerializeField] private float platformRangeMin;
+        [SerializeField] private float platformRangeMax;
+        
         private Vector3 _min;
         private Vector3 _max;
 
         private float _chanceStaticSpawn = 0.5f;
+        
+        private readonly Camera _camera = Camera.main;
 
         private void Start()
         {
-            _min = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));   
-            _max = Camera.main.ViewportToWorldPoint(new Vector3(1f, 1f, Camera.main.nearClipPlane));
+            _min = _camera.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));   
+            _max = _camera.ViewportToWorldPoint(new Vector3(1f, 1f, Camera.main.nearClipPlane));
             
             Spawn();
         }
@@ -34,7 +40,7 @@ namespace Platforms
             for (int i = 0; i < platformCount; i++)
             {
                 spawnPosition.x = Random.Range(_min.x, _max.x);
-                spawnPosition.y += Random.Range(0.2f, 0.6f);
+                spawnPosition.y += Random.Range(platformRangeMin, platformRangeMax);
 
                 if (Random.value < _chanceStaticSpawn)
                 {
@@ -46,7 +52,7 @@ namespace Platforms
                 }
             }
             spawnPosition.x = Random.Range(_min.x, _max.x);
-            spawnPosition.y += Random.Range(0.23f, 0.8f);
+            spawnPosition.y += Random.Range(platformRangeMin, platformRangeMax);
 
             Instantiate(finishPlatform, spawnPosition, Quaternion.identity);
         }

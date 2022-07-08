@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,7 +6,7 @@ namespace Score
 {
     public class ScoreView : MonoBehaviour
     {
-        [SerializeField] private Text textScore;
+        [SerializeField] private TextMeshProUGUI textScore;
 
         public void RenderCount(int count)
         {

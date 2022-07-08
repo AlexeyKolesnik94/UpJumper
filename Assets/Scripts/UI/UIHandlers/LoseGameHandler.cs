@@ -16,5 +16,10 @@ namespace UI.UIHandlers
         {
             loseGameCanvas.gameObject.SetActive(true);
         }
+        
+        private void OnDisable()
+        {
+            LoseEvent.OnLoseGame.RemoveListener(LoseHandler);
+        }
     }
 }

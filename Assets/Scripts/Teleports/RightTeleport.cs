@@ -7,15 +7,15 @@ namespace Teleports
 {
     public class RightTeleport : MonoBehaviour
     {
-        private CompositeDisposable _disposable = new CompositeDisposable();
-
         private Vector3 _max;
         private Vector3 _min;
+        
+        private readonly Camera _camera = Camera.main;
 
         private void Awake()
         {
-            _max = Camera.main.ViewportToWorldPoint(new Vector3(1f, 1f, Camera.main.nearClipPlane));
-            _min = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));
+            _max = _camera.ViewportToWorldPoint(new Vector3(1f, 1f, Camera.main.nearClipPlane));
+            _min = _camera.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));
             transform.position = new Vector2(_max.x + 0.2f, transform.position.y);
         }
 
@@ -28,12 +28,7 @@ namespace Teleports
                     
                     if (player)
                         player.transform.position = new Vector2(_min.x + 0.05f, player.transform.position.y);
-                }).AddTo(_disposable);
-        }
-
-        private void OnDisable()
-        {
-            _disposable.Dispose();
+                }).AddTo(this);
         }
     }
 }

@@ -8,7 +8,6 @@ namespace UI.BackInMenu
         protected override void BtnSender()
         {
             UIEvents.SendMenuBtnClick();
-            
         }
     }
 }

@@ -15,11 +15,8 @@ namespace Player
         private AudioSource _audio;
 
         private Vector3 _acceleration;
-
-        private readonly CompositeDisposable _disposable = new CompositeDisposable();
-
+        
         private static readonly int Jump = Animator.StringToHash("Jump");
-       
 
         private void Awake()
         {
@@ -42,18 +39,13 @@ namespace Player
                     {
                         Jumping(jumpForce);
                     }
-                }).AddTo(_disposable);
+                }).AddTo(this);
         }
 
         private void FixedUpdate()
         {
             Moving();
             BtnMoving();
-        }
-
-        private void OnDisable()
-        {
-            _disposable.Dispose();
         }
 
         private void Jumping(float force)

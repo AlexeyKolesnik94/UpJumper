@@ -13,7 +13,13 @@ namespace UI.UIHandlers
 
         private void StartBtnHandler()
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadSceneAsync("Game");
+        }
+
+
+        private void OnDisable()
+        {
+            UIEvents.OnStartBtnClick.RemoveListener(StartBtnHandler);
         }
     }
 }

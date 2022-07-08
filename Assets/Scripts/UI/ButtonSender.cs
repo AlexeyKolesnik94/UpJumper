@@ -14,5 +14,10 @@ namespace UI
         }
 
         protected abstract void BtnSender();
+
+        private void OnDestroy()
+        {
+            _button.onClick.RemoveListener(BtnSender);
+        }
     }
 }

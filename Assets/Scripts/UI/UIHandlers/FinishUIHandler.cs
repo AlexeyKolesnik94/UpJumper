@@ -16,5 +16,10 @@ namespace UI.UIHandlers
         {
             finishCanvas.gameObject.SetActive(true);
         }
+        
+        private void OnDisable()
+        {
+            FinishEvent.OnFinishing.RemoveListener(FinishHandler);
+        }
     }
 }
