@@ -22,13 +22,11 @@ namespace Platforms
         private Vector3 _max;
 
         private float _chanceStaticSpawn = 0.5f;
-        
-        private readonly Camera _camera = Camera.main;
 
         private void Start()
         {
-            _min = _camera.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));   
-            _max = _camera.ViewportToWorldPoint(new Vector3(1f, 1f, Camera.main.nearClipPlane));
+            _min = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));   
+            _max = Camera.main.ViewportToWorldPoint(new Vector3(1f, 1f, Camera.main.nearClipPlane));
             
             Spawn();
         }

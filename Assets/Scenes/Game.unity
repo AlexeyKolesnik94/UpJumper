@@ -1283,8 +1283,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1513038380}
-  - {fileID: 814696706}
-  - {fileID: 1144501586}
+  - {fileID: 860409168}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2348,7 +2347,6 @@ GameObject:
   m_Component:
   - component: {fileID: 814696706}
   - component: {fileID: 814696707}
-  - component: {fileID: 814696708}
   m_Layer: 0
   m_Name: LeftTeleport
   m_TagString: Untagged
@@ -2368,7 +2366,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 519420032}
+  m_Father: {fileID: 860409168}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &814696707
@@ -2397,18 +2395,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 4.7270107}
   m_EdgeRadius: 0
---- !u!114 &814696708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814696705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04f4847a0a2374969a0786f60aeb38d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &859937858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2485,6 +2471,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859937858}
   m_CullTransparentMesh: 1
+--- !u!1 &860409167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 860409168}
+  - component: {fileID: 860409169}
+  m_Layer: 0
+  m_Name: Sides
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &860409168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860409167}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1144501586}
+  - {fileID: 814696706}
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &860409169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860409167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab034553df174f2ea7acaba95b37645d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  left: {fileID: 814696707}
+  right: {fileID: 1144501587}
 --- !u!1 &885245153
 GameObject:
   m_ObjectHideFlags: 0
@@ -2949,7 +2983,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1144501586}
   - component: {fileID: 1144501587}
-  - component: {fileID: 1144501588}
   m_Layer: 0
   m_Name: RightTelepor
   m_TagString: Untagged
@@ -2969,8 +3002,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 519420032}
-  m_RootOrder: 2
+  m_Father: {fileID: 860409168}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1144501587
 BoxCollider2D:
@@ -2998,18 +3031,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 4.697236}
   m_EdgeRadius: 0
---- !u!114 &1144501588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1144501585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8d4b33482e15436592d6f175465887e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1178862556
 GameObject:
   m_ObjectHideFlags: 0

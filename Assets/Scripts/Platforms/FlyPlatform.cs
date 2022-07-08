@@ -11,7 +11,6 @@ namespace Platforms
 
         private bool _isMovingRight;
         
-        private readonly Camera _camera = Camera.main;
         
         private void Update()
         {
@@ -24,8 +23,8 @@ namespace Platforms
 
         private void Start()
         {
-            _min = _camera.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));   
-            _max = _camera.ViewportToWorldPoint(new Vector3(1f, 1f, Camera.main.nearClipPlane));
+            _min = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));   
+            _max = Camera.main.ViewportToWorldPoint(new Vector3(1f, 1f, Camera.main.nearClipPlane));
 
             _isMovingRight = true;
         }
